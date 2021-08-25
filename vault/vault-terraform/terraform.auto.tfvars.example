@@ -1,0 +1,16 @@
+# README: Rename me to vault.auto.tfvars & add values to the below variables
+# Don't forget to export your vault token! "export VAULT_TOKEN=token_goes_here"
+
+#Vault cluster auth specific vars
+vault_cluster_addr = "http://vault.address.com:8200/"
+
+### OIDC specific vars ###
+oidc_client_id          = "" #Client ID used for OIDC backends.
+oidc_client_secret      = "" #Client Secret used for OIDC backends.
+oidc_discovery_url      = "" #The OIDC Discovery URL, without any .well-known component (base path). IE: https://login.microsoftonline.com/TENANT-GUID-EXAMPLE/v2.0
+allowed_redirect_uris   = [""]
+# A list of strings, containing allowed_redirect_uris.
+# If you run into issues with namespaces, see the last value in the example for how you could add the namespace in the URI to allow explicit callbacks.
+# ["http://localhost:8250/oidc/callback","https://vault.lab.com:8200/ui/vault/auth/oidc/oidc/callback ","https://vault.lab.com:8200/ui/vault/auth/oidc/oidc/callback  ?namespace=Namespace1"]
+
+admin_aad_group_name = "" # Should be the Object Id of the AAD Group you wish to map to an external group alias.
