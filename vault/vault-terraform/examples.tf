@@ -11,6 +11,12 @@ module "root_oidc" {
   admin_aad_group_name  = var.admin_aad_group_name
 }
 
+resource "vault_mount" "root_kv_v2" {
+  path        = "secret"
+  type        = "kv-v2"
+  description = "This is a standard mount for kv version 2"
+}
+
 resource "vault_policy" "admins" {
   name   = "vault-admins"
   policy = <<EOT
