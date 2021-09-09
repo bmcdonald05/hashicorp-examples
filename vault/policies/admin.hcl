@@ -16,8 +16,8 @@ path "identity/*" {
   capabilities = ["create", "read", "update", "delete", "list"]
 }
 
-# permit access to administer the OIDC auth method
-path "oidc/*" {
+# permit access to administer the aws secret engine
+path "aws/*" {
   capabilities = ["create", "read", "update", "delete", "list"]
 }
 
